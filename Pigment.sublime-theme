@@ -12,10 +12,11 @@
       "white": "#ffffff",
       "black": "#111111",
 
-      "fg-dark-1": "color(var(fg) a(0.8))",
-      "fg-dark-2": "color(var(fg) a(0.6))",
-      "fg-dark-3": "color(var(fg) a(0.4))",
-      "fg-dark-4": "color(var(fg) a(0.2))",
+      "fg-dark-1": "color(var(fg) a(0.9))",
+      "fg-dark-2": "color(var(fg) a(0.8))",
+      "fg-dark-3": "color(var(fg) a(0.6))",
+      "fg-dark-4": "color(var(fg) a(0.4))",
+      "fg-dark-5": "color(var(fg) a(0.2))",
 
       "shadow": "color(var(black) a(0.5))",
       "fg-tabs": "color(var(fg) l(- 5%)",
@@ -36,7 +37,7 @@
    "rules": [
       {
          "class": "title_bar",
-         "fg": "var(fg-dark-1)",
+         "fg": "var(fg-dark-2)",
          "bg": "var(container)",
       },
 
@@ -72,7 +73,7 @@
       },
       {
          "class": "tree_row",
-         "attributes": ["hover"],
+         "attributes": ["selectable", "hover"],
          "layer0.tint": "var(bg-darker)",
          "layer0.opacity": 1.0,
          "layer1.tint": "var(container)",
@@ -149,12 +150,12 @@
          "class": "show_tabs_dropdown_button",
          "content_margin": [16,16],
          "layer0.texture": "Theme - Pigment/textures/dropdown.png",
-         "layer0.tint": "var(fg-dark-4)",
+         "layer0.tint": "var(fg-dark-5)",
       },
       {
          "class": "show_tabs_dropdown_button",
          "attributes": ["hover"],
-         "layer0.tint": "var(fg-dark-3)",
+         "layer0.tint": "var(fg-dark-4)",
       },
       {
          "class": "tab_control",
@@ -340,6 +341,11 @@
          "layer1.opacity": 1.0,
       },
       {
+         "class": "overlay_control",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "var(fg-dark-5)",
+      },
+      {
          "class": "quick_panel",
          "row_padding": 8,
       },
@@ -520,6 +526,41 @@
          "parents": [{"class": "icon_button_control", "attributes": ["hover"]}],
          "layer0.opacity": 1.0,
       },
+      {
+         "class": "icon_regex",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "black",
+      },
+      {
+         "class": "icon_case",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "black",
+      },
+      {
+         "class": "icon_whole_word",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "black",
+      },
+      {
+         "class": "icon_wrap",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "black",
+      },
+      {
+         "class": "icon_in_selection",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "black",
+      },
+      {
+         "class": "icon_context",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "black",
+      },
+      {
+         "class": "icon_use_buffer",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "black",
+      },
 
       // ============================================================
       //  DIALOGS
@@ -645,7 +686,7 @@
       },
       {
          "class": "puck_control",
-         "content_margin": [4, 20],
+         "content_margin": [4,20],
          "layer0.inner_margin": 2,
          "layer0.texture": "Theme - Pigment/textures/scroll_puck_v.png",
          "layer0.opacity": 1.0,
@@ -653,8 +694,13 @@
       {
          "class": "puck_control",
          "attributes": ["horizontal"],
-         "content_margin": [20, 4],
+         "content_margin": [20,4],
          "layer0.texture": "Theme - Pigment/textures/scroll_puck_h.png",
+      },
+      {
+         "class": "puck_control",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "black",
       },
 
       // view scrollbars
@@ -777,14 +823,21 @@
       },
       {
          "class": "icon_file_type",
-         "layer0.opacity": 0.4,
          "content_margin": [8,8],
+         "layer0.tint": "var(fg-dark-1)",
+         "layer0.opacity": 0.7,
+      },
+      {
+         "class": "icon_file_type",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.opacity": 0.35,
       },
       {
          "class": "icon_folder",
-         "layer0.texture": "Theme - Pigment/textures/folder_closed.png",
-         "layer0.opacity": 0.4,
          "content_margin": [9,8],
+         "layer0.texture": "Theme - Pigment/textures/folder_closed.png",
+         "layer0.tint": "var(fg-dark-4)",
+         "layer0.opacity": 0.9,
       },
       {
          "class": "icon_folder",
@@ -792,13 +845,25 @@
          "layer0.texture": "Theme - Pigment/textures/folder_open.png",
       },
       {
+         "class": "icon_folder",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.opacity": 0.5,
+      },
+      {
          "class": "icon_folder_dup",
-         "layer0.texture": "Theme - Pigment/textures/folder_symlink.png",
-         "layer0.opacity": 0.4,
          "content_margin": [9,8],
+         "layer0.texture": "Theme - Pigment/textures/folder_symlink.png",
+         "layer0.tint": "var(fg-dark-4)",
+         "layer0.opacity": 0.9,
+      },
+      {
+         "class": "icon_folder_dup",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.opacity": 0.5,
       },
       {
          "class": "icon_folder_loading",
+         "content_margin": [9,8],
          "layer0.texture": {
             "keyframes": [
                "Theme - Pigment/textures/folder_loading_01.png",
@@ -825,8 +890,13 @@
             "loop": true,
             "frame_time": 0.08,
          },
+         "layer0.tint": "var(fg-dark-4)",
+         "layer0.opacity": 0.9,
+      },
+      {
+         "class": "icon_folder_loading",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
          "layer0.opacity": 0.5,
-         "content_margin": [9,8],
       },
 
       // ============================================================
@@ -834,13 +904,13 @@
       // ============================================================
       {
          "class": "label_control",
-         "color": "var(fg-dark-2)",
+         "color": "var(fg-dark-3)",
          "font.face": "var(font-main)",
          "font.size": "var(font-size-m)",
       },
       {
          "class": "label_control",
-         "parents": [{"class": "button_control"}],
+         "parents": [{"class": "button_control"}, {"class": "window", "attributes": ["!file_light"]}],
          "shadow_color": "var(shadow)",
          "shadow_offset": [0,1],
       },
@@ -848,7 +918,7 @@
       // sidebar labels
       {
          "class": "sidebar_heading",
-         "color": "var(fg-dark-4)",
+         "color": "var(fg-dark-5)",
          "font.face": "var(font-main)",
          "font.size": "var(font-size-s)",
          "font.bold": true,
@@ -861,6 +931,11 @@
       },
       {
          "class": "sidebar_label",
+         "parents": [{"class": "tree_row", "attributes": ["expandable"]}],
+         "color": "var(fg-dark-4)",
+      },
+      {
+         "class": "sidebar_label",
          "settings": ["bold_folder_labels"],
          "parents": [{"class": "tree_row", "attributes": ["expandable"]}],
          "font.bold": true,
@@ -870,33 +945,36 @@
          "class": "sidebar_label",
          "settings": ["show_git_status"],
          "parents": [{"class": "file_system_entry", "attributes": ["ignored"]}],
-         "color": "var(fg-dark-4)",
+         "color": "color(var(fg-dark-5) a(0.25))",
+         "font.italic": true,
       },
       {
          "class": "icon_folder",
          "settings": ["show_git_status"],
-         "parents": [{"class": "tree_row", "attributes": ["!expanded"]}, {"class": "file_system_entry", "attributes": ["ignored"]}],
-         "layer0.tint": "var(fg-dark-4)",
-         "layer0.opacity": 0.7,
+         "parents": [{"class": "file_system_entry", "attributes": ["ignored"]}],
+         "layer0.tint": "var(fg-dark-5)",
+         "layer0.opacity": 0.55,
       },
       {
          "class": "icon_file_type",
          "settings": ["show_git_status"],
          "parents": [{"class": "file_system_entry", "attributes": ["ignored"]}],
-         "layer0.tint": "var(fg-dark-4)",
-         "layer0.opacity": 0.7,
+         "layer0.tint": "var(fg-dark-5)",
+         "layer0.opacity": 0.75,
       },
       {
-         "class": "vcs_status_badge",
-         "settings": ["show_git_status"],
-         "parents": [{"class": "file_system_entry", "attributes": ["ignored"]}],
-         "layer0.tint": "var(fg-dark-4)",
+          "class": "vcs_status_badge",
+          "settings": ["show_git_status"],
+          "parents": [{"class": "file_system_entry", "attributes": ["ignored"]}],
+          "layer0.texture": "Theme - Default/common/status_untracked.png",
+          "layer0.tint": "var(fg-dark-4)",
+          "layer0.opacity": 1.0,
       },
 
       {
          "class": "sidebar_label",
          "settings": ["show_git_status"],
-         "parents": [{"class": "file_system_entry", "attributes": ["untracked"]}],
+         "parents": [{"class": "tree_row", "attributes": ["!expanded"]}, {"class": "file_system_entry", "attributes": ["untracked"]}],
          "color": "var(purple)",
       },
       {
@@ -923,7 +1001,7 @@
       {
          "class": "sidebar_label",
          "settings": ["show_git_status"],
-         "parents": [{"class": "file_system_entry", "attributes": ["added"]}],
+         "parents": [{"class": "tree_row", "attributes": ["!expanded"]}, {"class": "file_system_entry", "attributes": ["added"]}],
          "color": "var(green)",
       },
       {
@@ -950,7 +1028,7 @@
       {
          "class": "sidebar_label",
          "settings": ["show_git_status"],
-         "parents": [{"class": "file_system_entry", "attributes": ["staged"]}],
+         "parents": [{"class": "tree_row", "attributes": ["!expanded"]}, {"class": "file_system_entry", "attributes": ["staged"]}],
          "color": "var(green)",
       },
       {
@@ -977,7 +1055,7 @@
       {
          "class": "sidebar_label",
          "settings": ["show_git_status"],
-         "parents": [{"class": "file_system_entry", "attributes": ["deleted"]}],
+         "parents": [{"class": "tree_row", "attributes": ["!expanded"]}, {"class": "file_system_entry", "attributes": ["deleted"]}],
          "color": "var(green)",
       },
       {
@@ -1004,7 +1082,7 @@
       {
          "class": "sidebar_label",
          "settings": ["show_git_status"],
-         "parents": [{"class": "file_system_entry", "attributes": ["modified"]}],
+         "parents": [{"class": "tree_row", "attributes": ["!expanded"]}, {"class": "file_system_entry", "attributes": ["modified"]}],
          "color": "var(blue)",
       },
       {
@@ -1031,7 +1109,7 @@
       {
          "class": "sidebar_label",
          "settings": ["show_git_status"],
-         "parents": [{"class": "file_system_entry", "attributes": ["missing"]}],
+         "parents": [{"class": "tree_row", "attributes": ["!expanded"]}, {"class": "file_system_entry", "attributes": ["missing"]}],
          "color": "var(blue)",
       },
       {
@@ -1051,7 +1129,7 @@
       {
          "class": "sidebar_label",
          "settings": ["show_git_status"],
-         "parents": [{"class": "file_system_entry", "attributes": ["unmerged"]}],
+         "parents": [{"class": "tree_row", "attributes": ["!expanded"]}, {"class": "file_system_entry", "attributes": ["unmerged"]}],
          "color": "var(red)",
       },
       {
@@ -1075,19 +1153,15 @@
          "layer0.tint": "var(red)",
       },
 
-      {
-         "class": "sidebar_label",
-         "settings": ["bold_folder_labels"],
-         "parents": [{"class": "tree_row", "attributes": ["expanded"]}],
-         "color": "var(fg-dark-1)",
-      },
-
-
       // tab labels
       {
          "class": "tab_label",
-         "color": "var(fg-tabs)",
+         "color": "var(fg-dark-1)",
          "font.face": "var(font-main)",
+      },
+      {
+         "class": "tab_label",
+         "parents": [{"class": "window", "attributes": ["!file_light"]}],
          "shadow_color": "var(shadow)",
          "shadow_offset": [0,-1],
       },
@@ -1100,13 +1174,13 @@
          "class": "tab_label",
          "settings": ["highlight_modified_tabs"],
          "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
-         "color": "var(fg-dark-3)",
+         "color": "var(fg-dark-4)",
       },
 
       // quick panel labels
       {
          "class": "quick_panel_label",
-         "fg": "var(fg-dark-2)",
+         "fg": "var(fg-dark-3)",
          "match_fg": "var(fg)",
          "selected_fg": "var(fg)",
          "selected_match_fg": "var(fg)",
@@ -1115,10 +1189,10 @@
       },
       {
          "class": "quick_panel_path_label",
-         "fg": "var(fg-dark-3)",
-         "match_fg": "var(fg-dark-2)",
-         "selected_fg": "var(fg-dark-2)",
-         "selected_match_fg": "var(fg-dark-2)",
+         "fg": "var(fg-dark-4)",
+         "match_fg": "var(fg-dark-3)",
+         "selected_fg": "var(fg-dark-3)",
+         "selected_match_fg": "var(fg-dark-3)",
          "font.face": "var(font-main)",
          "font.size": "var(font-size-s)",
       },
@@ -1126,7 +1200,7 @@
       // autocomplete labels
       {
          "class": "auto_complete_label",
-         "fg": "var(fg-dark-2)",
+         "fg": "var(fg-dark-3)",
          "match_fg": "var(fg)",
          "selected_fg": "var(fg)",
          "selected_match_fg": "var(fg)",
@@ -1137,7 +1211,7 @@
       {
          "class": "label_control",
          "parents": [{"class": "dialog"}],
-         "color": "var(fg-dark-2)",
+         "color": "var(fg-dark-3)",
          "font.face": "var(font-main)",
          "font.size": "var(font-size-m)",
       },
@@ -1147,6 +1221,10 @@
          "color": "var(fg)",
          "font.face": "var(font-main)",
          "font.size": "var(font-size-title)",
+      },
+      {
+         "class": "title_label_control",
+         "parents": [{"class": "dialog"}, {"class": "window", "attributes": ["!file_light"]}],
          "shadow_color": "var(shadow)",
          "shadow_offset": [0,1],
       },
@@ -1167,6 +1245,10 @@
          "color": "var(fg)",
          "font.face": "var(font-mono)",
          "font.size": "var(font-size-m)",
+      },
+      {
+         "class": "label_control",
+         "parents": [{"class": "status_bar"}, {"class": "window", "attributes": ["!file_light"]}],
          "shadow_color": "var(shadow)",
          "shadow_offset": [0,1],
       },
