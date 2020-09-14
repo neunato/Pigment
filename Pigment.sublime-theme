@@ -964,7 +964,7 @@
           "class": "vcs_status_badge",
           "settings": ["show_git_status"],
           "parents": [{"class": "file_system_entry", "attributes": ["ignored"]}],
-          "layer0.texture": "Theme - Default/common/status_untracked.png",
+          "layer0.texture": "Theme - Pigment/textures/status_untracked.png",
           "layer0.tint": "var(fg-dark-4)",
           "layer0.opacity": 1.0,
       },
@@ -993,7 +993,9 @@
          "class": "vcs_status_badge",
          "settings": ["show_git_status"],
          "parents": [{"class": "file_system_entry", "attributes": ["untracked"]}],
+         "layer0.texture": "Theme - Pigment/textures/status_untracked.png",
          "layer0.tint": "var(purple)",
+         "layer0.opacity": 1.0,
       },
 
       {
@@ -1020,7 +1022,9 @@
          "class": "vcs_status_badge",
          "settings": ["show_git_status"],
          "parents": [{"class": "file_system_entry", "attributes": ["added"]}],
+         "layer0.texture": "Theme - Pigment/textures/status_staged.png",
          "layer0.tint": "var(green)",
+         "layer0.opacity": 1.0,
       },
 
       {
@@ -1047,7 +1051,9 @@
          "class": "vcs_status_badge",
          "settings": ["show_git_status"],
          "parents": [{"class": "file_system_entry", "attributes": ["staged"]}],
+         "layer0.texture": "Theme - Pigment/textures/status_staged.png",
          "layer0.tint": "var(green)",
+         "layer0.opacity": 1.0,
       },
 
       {
@@ -1074,7 +1080,9 @@
          "class": "vcs_status_badge",
          "settings": ["show_git_status"],
          "parents": [{"class": "file_system_entry", "attributes": ["deleted"]}],
+         "layer0.texture": "Theme - Pigment/textures/status_staged.png",
          "layer0.tint": "var(green)",
+         "layer0.opacity": 1.0,
       },
 
       {
@@ -1101,7 +1109,9 @@
          "class": "vcs_status_badge",
          "settings": ["show_git_status"],
          "parents": [{"class": "file_system_entry", "attributes": ["modified"]}],
+         "layer0.texture": "Theme - Pigment/textures/status_modified.png",
          "layer0.tint": "var(blue)",
+         "layer0.opacity": 1.0,
       },
 
       {
@@ -1121,7 +1131,9 @@
          "class": "vcs_status_badge",
          "settings": ["show_git_status"],
          "parents": [{"class": "file_system_entry", "attributes": ["missing"]}],
+         "layer0.texture": "Theme - Pigment/textures/status_modified.png",
          "layer0.tint": "var(blue)",
+         "layer0.opacity": 1.0,
       },
 
       {
@@ -1148,7 +1160,9 @@
          "class": "vcs_status_badge",
          "settings": ["show_git_status"],
          "parents": [{"class": "file_system_entry", "attributes": ["unmerged"]}],
+         "layer0.texture": "Theme - Pigment/textures/status_unmerged.png",
          "layer0.tint": "var(red)",
+         "layer0.opacity": 1.0,
       },
 
       // tab labels
