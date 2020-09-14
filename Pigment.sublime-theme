@@ -170,6 +170,12 @@
       {
          "class": "tab_close_button",
          "settings": ["show_tab_close_buttons"],
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "var(black)",
+      },
+      {
+         "class": "tab_close_button",
+         "settings": ["show_tab_close_buttons"],
          "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
          "layer0.texture": "Theme - Pigment/textures/tab_dirty.png",
          "layer0.opacity": 0.3,
@@ -217,7 +223,7 @@
       {
          "class": "fold_button_control",
          "layer0.texture": "Theme - Pigment/textures/fold_closed.png",
-         "layer0.opacity": 0.4,
+         "layer0.opacity": 0.3,
          "content_margin": 8,
       },
       {
@@ -228,7 +234,12 @@
       {
          "class": "fold_button_control",
          "attributes": ["hover"],
-         "layer0.opacity": 0.8,
+         "layer0.opacity": 0.6,
+      },
+      {
+         "class": "fold_button_control",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "var(black)",
       },
 
       // ============================================================
@@ -527,37 +538,37 @@
       {
          "class": "icon_regex",
          "parents": [{"class": "window", "attributes": ["file_light"]}],
-         "layer0.tint": "black",
+         "layer0.tint": "var(black)",
       },
       {
          "class": "icon_case",
          "parents": [{"class": "window", "attributes": ["file_light"]}],
-         "layer0.tint": "black",
+         "layer0.tint": "var(black)",
       },
       {
          "class": "icon_whole_word",
          "parents": [{"class": "window", "attributes": ["file_light"]}],
-         "layer0.tint": "black",
+         "layer0.tint": "var(black)",
       },
       {
          "class": "icon_wrap",
          "parents": [{"class": "window", "attributes": ["file_light"]}],
-         "layer0.tint": "black",
+         "layer0.tint": "var(black)",
       },
       {
          "class": "icon_in_selection",
          "parents": [{"class": "window", "attributes": ["file_light"]}],
-         "layer0.tint": "black",
+         "layer0.tint": "var(black)",
       },
       {
          "class": "icon_context",
          "parents": [{"class": "window", "attributes": ["file_light"]}],
-         "layer0.tint": "black",
+         "layer0.tint": "var(black)",
       },
       {
          "class": "icon_use_buffer",
          "parents": [{"class": "window", "attributes": ["file_light"]}],
-         "layer0.tint": "black",
+         "layer0.tint": "var(black)",
       },
 
       // ============================================================
@@ -616,6 +627,18 @@
          "class": "dropdown_button_control",
          "attributes": ["hover"],
          "layer0.opacity": 0.5,
+      },
+      {
+         "class": "dropdown_button_control",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "var(black)",
+         "layer0.opacity": 0.2,
+      },
+      {
+         "class": "dropdown_button_control",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "attributes": ["hover"],
+         "layer0.opacity": 0.3,
       },
 
       // ============================================================
