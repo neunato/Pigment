@@ -63,6 +63,11 @@
          "indent_top_level": false,
       },
       {
+         "class": "sidebar_tree",
+         "parents": [{"class": "scroll_area_control", "attributes": ["scrollable"]}],
+         "row_padding": [12,6,0,6],
+      },
+      {
          "class": "tree_row",
          "layer0.opacity": 0.0,
          "layer1.inner_margin": [0,1],
@@ -670,40 +675,53 @@
       // ============================================================
       {
          "class": "scroll_area_control",
+         "settings": ["overlay_scroll_bars"],
          "overlay": true,
-      },
-      {
-         "class": "scroll_area_control",
-         "settings": ["!overlay_scroll_bars"],
-         "overlay": false,
       },
       {
          "class": "scroll_bar_control",
          "content_margin": 3,
-         "layer0.tint": "var(container)",
+         "layer0.tint": "var(bg)",
          "layer0.opacity": 1.0,
          "layer1.tint": "var(border)",
-         "layer1.opacity": 1.0,
+         "layer1.opacity": 0.0,
          "layer1.draw_center": false,
       },
       {
          "class": "scroll_corner_control",
-         "layer0.tint": "var(container)",
+         "layer0.tint": "var(bg)",
          "layer0.opacity": 1.0,
          "layer1.tint": "var(border)",
-         "layer1.opacity": 1.0,
-         "layer1.draw_center": false
+         "layer1.opacity": 0.0,
+         "layer1.draw_center": false,
       },
       {
          "class": "scroll_track_control",
          "layer0.inner_margin": 2,
          "layer0.texture": "Theme - Pigment/textures/scroll_bar_v.png",
-         "layer0.opacity": 0.0,
+         "layer0.opacity": 1.0,
       },
       {
          "class": "scroll_track_control",
          "attributes": ["horizontal"],
          "layer0.texture": "Theme - Pigment/textures/scroll_bar_h.png",
+      },
+      {
+         "class": "scroll_bar_control",
+         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
+         "layer0.tint": "var(container)",
+         "layer1.opacity": 1.0,
+      },
+      {
+         "class": "scroll_corner_control",
+         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
+         "layer0.tint": "var(container)",
+         "layer1.opacity": 1.0,
+      },
+      {
+         "class": "scroll_track_control",
+         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
+         "layer0.opacity": 0.0,
       },
       {
          "class": "puck_control",
@@ -719,6 +737,11 @@
          "layer0.texture": "Theme - Pigment/textures/scroll_puck_h.png",
       },
       {
+         "class": "scroll_track_control",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "black",
+      },
+      {
          "class": "puck_control",
          "parents": [{"class": "window", "attributes": ["file_light"]}],
          "layer0.tint": "black",
@@ -727,6 +750,7 @@
       // view scrollbars
       {
          "class": "scroll_bar_control",
+         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
          "parents": [{"class": "grid_layout_control"}],
          "attributes": ["!horizontal"],
          "content_margin": [4,3,3,3],
@@ -734,6 +758,7 @@
       },
       {
          "class": "scroll_bar_control",
+         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
          "parents": [{"class": "grid_layout_control"}],
          "attributes": ["horizontal"],
          "content_margin": [3,4,3,3],
@@ -741,6 +766,7 @@
       },
       {
          "class": "scroll_corner_control",
+         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
          "parents": [{"class": "grid_layout_control"}],
          "layer1.opacity": 0.0,
       },
@@ -749,21 +775,23 @@
       {
          "class": "scroll_bar_control",
          "parents": [{"class": "sidebar_container"}],
-         "attributes": ["!horizontal"],
-         "content_margin": [4,3,4,3],
-         "layer1.inner_margin": [1,0,1,0],
+         "layer0.opacity": 0.0,
+         "layer1.opacity": 0.0,
       },
       {
-         "class": "scroll_bar_control",
-         "attributes": ["horizontal"],
+         "class": "scroll_track_control",
          "parents": [{"class": "sidebar_container"}],
-         "content_margin": [3,4,3,3],
-         "layer1.inner_margin": [0,1,0,0],
+         "layer0.opacity": 0.0,
       },
       {
          "class": "scroll_corner_control",
          "parents": [{"class": "sidebar_container"}],
+         "layer0.tint": "var(container)",
+         "layer0.opacity": 1.0,
          "layer1.inner_margin": [0,0,1,0],
+         "layer1.tint": "var(border)",
+         "layer1.opacity": 1.0,
+         "layer1.draw_center": false
       },
 
       // autocomplete scrollbars
@@ -771,7 +799,9 @@
          "class": "scroll_bar_control",
          "parents": [{"class": "popup_control"}],
          "content_margin": [4,3,3,3],
+         "layer0.tint": "var(container)",
          "layer1.inner_margin": [1,0,0,0],
+         "layer1.opacity": 1.0,
       },
 
       // quick panel scrollbars
@@ -832,6 +862,11 @@
       {
          "class": "file_system_entry",
          "spacing": 8,
+      },
+      {
+         "class": "file_system_entry",
+         "settings": ["overlay_scroll_bars"],
+         "content_margin": [0,0,8,0]
       },
       {
          "class": "file_system_entry",
