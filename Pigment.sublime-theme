@@ -40,10 +40,241 @@
       },
 
       // ============================================================
+      //  SCROLLBARS
+      // ============================================================
+      {
+         "class": "scroll_area_control",
+         "settings": ["overlay_scroll_bars"],
+         "overlay": true,
+      },
+      {
+         "class": "scroll_bar_control",
+         "content_margin": 3,
+         "layer0.tint": "var(bg)",
+         "layer0.opacity": 1.0,
+         "layer1.tint": "var(border)",
+         "layer1.opacity": 0.0,
+         "layer1.draw_center": false,
+      },
+      {
+         "class": "scroll_corner_control",
+         "layer0.tint": "var(bg)",
+         "layer0.opacity": 1.0,
+         "layer1.tint": "var(border)",
+         "layer1.opacity": 0.0,
+         "layer1.draw_center": false,
+      },
+      {
+         "class": "scroll_track_control",
+         "layer0.inner_margin": 2,
+         "layer0.texture": "Theme - Pigment/textures/scroll_bar_v.png",
+         "layer0.opacity": 1.0,
+      },
+      {
+         "class": "scroll_track_control",
+         "attributes": ["horizontal"],
+         "layer0.texture": "Theme - Pigment/textures/scroll_bar_h.png",
+      },
+      {
+         "class": "scroll_bar_control",
+         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
+         "layer0.tint": "var(container)",
+         "layer1.opacity": 1.0,
+      },
+      {
+         "class": "scroll_corner_control",
+         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
+         "layer0.tint": "var(container)",
+         "layer1.opacity": 1.0,
+      },
+      {
+         "class": "scroll_track_control",
+         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
+         "layer0.opacity": 0.0,
+      },
+      {
+         "class": "puck_control",
+         "content_margin": [4,20],
+         "layer0.inner_margin": 2,
+         "layer0.texture": "Theme - Pigment/textures/scroll_puck_v.png",
+         "layer0.opacity": 1.0,
+      },
+      {
+         "class": "puck_control",
+         "settings": ["pigment_hide_sidebar_heading"],
+         "attributes": ["!horizontal"],
+         "parents": [{"class": "sidebar_container"}],
+         "layer0.texture": "Theme - Pigment/textures/scroll_puck_v_sidebar.png",
+         "layer0.inner_margin": [2,32,2,2],
+      },
+      {
+         "class": "puck_control",
+         "attributes": ["horizontal"],
+         "content_margin": [20,4],
+         "layer0.texture": "Theme - Pigment/textures/scroll_puck_h.png",
+      },
+      {
+         "class": "scroll_track_control",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "black",
+      },
+      {
+         "class": "puck_control",
+         "parents": [{"class": "window", "attributes": ["file_light"]}],
+         "layer0.tint": "black",
+      },
+
+      // view scrollbars
+      {
+         "class": "scroll_bar_control",
+         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
+         "parents": [{"class": "grid_layout_control"}],
+         "attributes": ["!horizontal"],
+         "content_margin": [4,3,3,3],
+         "layer1.inner_margin": [1,0,0,0],
+      },
+      {
+         "class": "scroll_bar_control",
+         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
+         "parents": [{"class": "grid_layout_control"}],
+         "attributes": ["horizontal"],
+         "content_margin": [3,4,3,3],
+         "layer1.inner_margin": [0,1,0,0],
+      },
+      {
+         "class": "scroll_corner_control",
+         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
+         "parents": [{"class": "grid_layout_control"}],
+         "layer1.opacity": 0.0,
+      },
+
+      // sidebar scrollbars
+      {
+         "class": "scroll_bar_control",
+         "parents": [{"class": "sidebar_container"}],
+         "content_margin": [1,3,3,3],
+         "layer0.opacity": 0.0,
+         "layer1.opacity": 0.0,
+      },
+      {
+         "class": "scroll_track_control",
+         "parents": [{"class": "sidebar_container"}],
+         "layer0.opacity": 0.0,
+      },
+      {
+         "class": "scroll_corner_control",
+         "parents": [{"class": "sidebar_container"}],
+         "layer0.tint": "var(container)",
+         "layer0.opacity": 1.0,
+         "layer1.inner_margin": [0,0,1,0],
+         "layer1.tint": "var(border)",
+         "layer1.opacity": 1.0,
+         "layer1.draw_center": false
+      },
+      {
+         "class": "puck_control",
+         "parents": [{"class": "sidebar_container"}],
+         "layer0.tint": "var(fg-dark-1)",
+      },
+      {
+         "class": "scroll_bar_control",
+         "settings": ["!pigment_sidebar_vertical_scroll"],
+         "attributes": ["!horizontal"],
+         "parents": [{"class": "sidebar_container"}],
+         "content_margin": 0,
+      },
+      {
+         "class": "puck_control",
+         "settings": ["!pigment_sidebar_vertical_scroll"],
+         "attributes": ["!horizontal"],
+         "parents": [{"class": "sidebar_container"}],
+         "content_margin": 0,
+         "layer0.opacity": 0.0,
+      },
+      {
+         "class": "scroll_bar_control",
+         "settings": ["!pigment_sidebar_horizontal_scroll"],
+         "attributes": ["horizontal"],
+         "parents": [{"class": "sidebar_container"}],
+         "content_margin": 0,
+      },
+      {
+         "class": "puck_control",
+         "settings": ["!pigment_sidebar_horizontal_scroll"],
+         "attributes": ["horizontal"],
+         "parents": [{"class": "sidebar_container"}],
+         "content_margin": 0,
+         "layer0.opacity": 0.0,
+      },
+
+      // autocomplete scrollbars
+      {
+         "class": "scroll_bar_control",
+         "parents": [{"class": "popup_control"}],
+         "content_margin": [4,3,3,3],
+         "layer0.tint": "var(container)",
+         "layer1.inner_margin": [1,0,0,0],
+         "layer1.opacity": 1.0,
+      },
+
+      // quick panel scrollbars
+      {
+         "class": "scroll_bar_control",
+         "parents": [{"class": "overlay_control"}],
+         "content_margin": [4,0,0,0],
+         "layer0.tint": "var(border)",
+         "layer1.opacity": 0.0,
+      },
+      {
+         "class": "scroll_track_control",
+         "parents": [{"class": "overlay_control"}],
+         "layer0.opacity": 1.0,
+      },
+
+      // panel scrollbars
+      {
+         "class": "scroll_bar_control",
+         "parents": [{"class": "panel_control"}],
+         "content_margin": [4,3],
+         "layer0.tint": "var(bg)",
+         "layer1.opacity": 0.0,
+      },
+      {
+         "class": "scroll_corner_control",
+         "parents": [{"class": "panel_control"}],
+         "layer1.tint": "var(bg)",
+      },
+      {
+         "class": "scroll_track_control",
+         "parents": [{"class": "panel_control"}],
+         "layer0.opacity": 1.0,
+      },
+
+      // dialog scrollbars
+      {
+         "class": "scroll_bar_control",
+         "parents": [{"class": "dialog"}],
+         "content_margin": [4,3],
+         "layer0.tint": "var(bg)",
+         "layer1.opacity": 0.0,
+      },
+      {
+         "class": "scroll_corner_control",
+         "parents": [{"class": "dialog"}],
+         "layer1.tint": "var(bg)",
+      },
+      {
+         "class": "scroll_track_control",
+         "parents": [{"class": "dialog"}],
+         "layer0.opacity": 1.0,
+      },
+
+      // ============================================================
       //  SIDEBAR
       // ============================================================
       {
          "class": "sidebar_container",
+         "content_margin": 0,
          "layer0.tint": "var(container)",
          "layer0.opacity": 1.0,
          "layer1.inner_margin": [0,0,1,0],
@@ -54,41 +285,74 @@
       {
          "class": "sidebar_container",
          "settings": ["pigment_hide_sidebar_heading"],
-         "content_margin": [0,-24,0,0],
+         "content_margin": [0,-30,0,0],
+      },
+      // sidebar contents are drawn on top of sidebar which results in a missing
+      // border when scrolling horizontally; sort of fixed by adding a shadow;
+      // having overlay = false is important to keep the shadow always visible
+      {
+         "class": "scroll_area_control",
+         "parents": [{"class": "sidebar_container"}],
+         "overlay": false,
+         "content_margin": 8,
+         "right_shadow": "var(border)",
+         "right_shadow_size": 0,
+      },
+      {
+         "class": "scroll_area_control",
+         "attributes": ["!scrollable"],
+         "parents": [{"class": "sidebar_container"}],
+         "right_shadow_size": 3,
+      },
+      {
+         "class": "scroll_area_control",
+         "settings": ["!pigment_sidebar_vertical_scroll"],
+         "attributes": ["scrollable"],
+         "parents": [{"class": "sidebar_container"}],
+         "right_shadow_size": 3,
+      },
+      {
+         "class": "scroll_area_control",
+         "settings": ["!pigment_hide_sidebar_heading"],
+         "parents": [{"class": "sidebar_container"}],
+         "content_margin": [8,0,8,8],
       },
       {
          "class": "sidebar_tree",
-         "row_padding": [12,6],
+         "row_padding": [8,8,8,8],
          "indent": 24,
          "indent_top_level": false,
       },
       {
          "class": "sidebar_tree",
-         "parents": [{"class": "scroll_area_control", "attributes": ["scrollable"]}],
-         "row_padding": [12,6,0,6],
+         "settings": ["show_git_status"],
+         "row_padding": [8,8,0,8],
       },
       {
          "class": "tree_row",
-         "layer0.opacity": 0.0,
-         "layer1.inner_margin": [0,1],
-         "layer1.opacity": 0.0,
-         "layer1.draw_center": false,
+         "layer0.texture": "Theme - Pigment/textures/rounded_box.png",
+         "layer0.inner_margin": 4,
+         "layer0.tint": "var(container)",
+         "layer0.opacity": 1.0,
       },
       {
          "class": "tree_row",
          "attributes": ["selectable", "hover"],
          "layer0.tint": "var(bg-darker)",
-         "layer0.opacity": 1.0,
-         "layer1.tint": "var(container)",
-         "layer1.opacity": 1.0,
       },
       {
          "class": "tree_row",
          "attributes": ["selected"],
          "layer0.tint": "var(bg)",
-         "layer0.opacity": 1.0,
-         "layer1.tint": "var(border)",
-         "layer1.opacity": 1.0,
+      },
+      {
+         "class": "file_system_entry",
+         "content_margin": 0,
+      },
+      {
+         "class": "file_system_entry",
+         "settings": ["show_git_status"],
+         "content_margin": [0,0,20,0],
       },
       {
          "class": "vcs_status_badge",
@@ -671,202 +935,11 @@
       },
 
       // ============================================================
-      //  SCROLLBARS
-      // ============================================================
-      {
-         "class": "scroll_area_control",
-         "settings": ["overlay_scroll_bars"],
-         "overlay": true,
-      },
-      {
-         "class": "scroll_bar_control",
-         "content_margin": 3,
-         "layer0.tint": "var(bg)",
-         "layer0.opacity": 1.0,
-         "layer1.tint": "var(border)",
-         "layer1.opacity": 0.0,
-         "layer1.draw_center": false,
-      },
-      {
-         "class": "scroll_corner_control",
-         "layer0.tint": "var(bg)",
-         "layer0.opacity": 1.0,
-         "layer1.tint": "var(border)",
-         "layer1.opacity": 0.0,
-         "layer1.draw_center": false,
-      },
-      {
-         "class": "scroll_track_control",
-         "layer0.inner_margin": 2,
-         "layer0.texture": "Theme - Pigment/textures/scroll_bar_v.png",
-         "layer0.opacity": 1.0,
-      },
-      {
-         "class": "scroll_track_control",
-         "attributes": ["horizontal"],
-         "layer0.texture": "Theme - Pigment/textures/scroll_bar_h.png",
-      },
-      {
-         "class": "scroll_bar_control",
-         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
-         "layer0.tint": "var(container)",
-         "layer1.opacity": 1.0,
-      },
-      {
-         "class": "scroll_corner_control",
-         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
-         "layer0.tint": "var(container)",
-         "layer1.opacity": 1.0,
-      },
-      {
-         "class": "scroll_track_control",
-         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
-         "layer0.opacity": 0.0,
-      },
-      {
-         "class": "puck_control",
-         "content_margin": [4,20],
-         "layer0.inner_margin": 2,
-         "layer0.texture": "Theme - Pigment/textures/scroll_puck_v.png",
-         "layer0.opacity": 1.0,
-      },
-      {
-         "class": "puck_control",
-         "attributes": ["horizontal"],
-         "content_margin": [20,4],
-         "layer0.texture": "Theme - Pigment/textures/scroll_puck_h.png",
-      },
-      {
-         "class": "scroll_track_control",
-         "parents": [{"class": "window", "attributes": ["file_light"]}],
-         "layer0.tint": "black",
-      },
-      {
-         "class": "puck_control",
-         "parents": [{"class": "window", "attributes": ["file_light"]}],
-         "layer0.tint": "black",
-      },
-
-      // view scrollbars
-      {
-         "class": "scroll_bar_control",
-         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
-         "parents": [{"class": "grid_layout_control"}],
-         "attributes": ["!horizontal"],
-         "content_margin": [4,3,3,3],
-         "layer1.inner_margin": [1,0,0,0],
-      },
-      {
-         "class": "scroll_bar_control",
-         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
-         "parents": [{"class": "grid_layout_control"}],
-         "attributes": ["horizontal"],
-         "content_margin": [3,4,3,3],
-         "layer1.inner_margin": [0,1,0,0],
-      },
-      {
-         "class": "scroll_corner_control",
-         "settings": ["pigment_heavy_scroll_bars", "!overlay_scroll_bars"],
-         "parents": [{"class": "grid_layout_control"}],
-         "layer1.opacity": 0.0,
-      },
-
-      // sidebar scrollbars
-      {
-         "class": "scroll_bar_control",
-         "parents": [{"class": "sidebar_container"}],
-         "layer0.opacity": 0.0,
-         "layer1.opacity": 0.0,
-      },
-      {
-         "class": "scroll_track_control",
-         "parents": [{"class": "sidebar_container"}],
-         "layer0.opacity": 0.0,
-      },
-      {
-         "class": "scroll_corner_control",
-         "parents": [{"class": "sidebar_container"}],
-         "layer0.tint": "var(container)",
-         "layer0.opacity": 1.0,
-         "layer1.inner_margin": [0,0,1,0],
-         "layer1.tint": "var(border)",
-         "layer1.opacity": 1.0,
-         "layer1.draw_center": false
-      },
-
-      // autocomplete scrollbars
-      {
-         "class": "scroll_bar_control",
-         "parents": [{"class": "popup_control"}],
-         "content_margin": [4,3,3,3],
-         "layer0.tint": "var(container)",
-         "layer1.inner_margin": [1,0,0,0],
-         "layer1.opacity": 1.0,
-      },
-
-      // quick panel scrollbars
-      {
-         "class": "scroll_bar_control",
-         "parents": [{"class": "overlay_control"}],
-         "content_margin": [4,0,0,0],
-         "layer0.tint": "var(border)",
-         "layer1.opacity": 0.0,
-      },
-      {
-         "class": "scroll_track_control",
-         "parents": [{"class": "overlay_control"}],
-         "layer0.opacity": 1.0,
-      },
-
-      // panel scrollbars
-      {
-         "class": "scroll_bar_control",
-         "parents": [{"class": "panel_control"}],
-         "content_margin": [4,3],
-         "layer0.tint": "var(bg)",
-         "layer1.opacity": 0.0,
-      },
-      {
-         "class": "scroll_corner_control",
-         "parents": [{"class": "panel_control"}],
-         "layer1.tint": "var(bg)",
-      },
-      {
-         "class": "scroll_track_control",
-         "parents": [{"class": "panel_control"}],
-         "layer0.opacity": 1.0,
-      },
-
-      // dialog scrollbars
-      {
-         "class": "scroll_bar_control",
-         "parents": [{"class": "dialog"}],
-         "content_margin": [4,3],
-         "layer0.tint": "var(bg)",
-         "layer1.opacity": 0.0,
-      },
-      {
-         "class": "scroll_corner_control",
-         "parents": [{"class": "dialog"}],
-         "layer1.tint": "var(bg)",
-      },
-      {
-         "class": "scroll_track_control",
-         "parents": [{"class": "dialog"}],
-         "layer0.opacity": 1.0,
-      },
-
-      // ============================================================
       //  FOLDER/FILE ICONS
       // ============================================================
       {
          "class": "file_system_entry",
          "spacing": 8,
-      },
-      {
-         "class": "file_system_entry",
-         "settings": ["overlay_scroll_bars"],
-         "content_margin": [0,0,8,0]
       },
       {
          "class": "file_system_entry",
